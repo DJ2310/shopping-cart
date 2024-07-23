@@ -6,7 +6,7 @@ function Card({data}) {
     const {addToCart,removeFromCart,decQuantity,incQuantity,getItemQuantity} = useContext(AppContext);
     
   return (
-        <div className='flex-col bg-white rounded-lg mt-[40px] ml-5 
+        <div className='flex-col bg-white rounded-lg mt-[40px] ml-5 w-[90%]
               group hover:scale-110 transition duration-300 ease-in  
               shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px] hover:shadow-[0px_0px_95px_53px_#00000024]'>
           <div className='w-full flex flex-col items-center justify-center content-center p-4'>
