@@ -11,6 +11,7 @@ export default function AppContextProvider({children}){
     const [cartItems, setCartItems] = useState([]);
     const [totalItems, setTotalItems] = useState(0);
     const [cartTotal, setCartTotal] = useState(0);
+    const[category,setCategory] = useState("all");
 
     const getProducts = async ()=>{
         setLoading(true);
@@ -95,6 +96,9 @@ export default function AppContextProvider({children}){
         setCartTotal(total);
 
     }
+    const handleCategory = (event) => {
+        setCategory(event.target.value);
+      };
 
     
 
@@ -116,7 +120,9 @@ export default function AppContextProvider({children}){
         decQuantity,
         getTotalItems,
         getCartTotal,
-        getItemQuantity
+        getItemQuantity,
+        category,
+        handleCategory
 
     }
 

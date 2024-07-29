@@ -73,9 +73,13 @@ function Cart() {
           <p className='text-3xl font-bold'>SUMMARY</p>
           <p className='font-semi-bold text-lg'>Total Items : {totalItems}</p>
           <p className='font-semi-bold text-lg'>Total Amount : $ {cartTotal}</p>
-          <button className='mt-[10px] text-base py-2 px-2 w-[70%] rounded-full bg-blue-950 text-white'>
+          <button className='mt-[10px] text-base py-2 px-2 w-[60%] rounded-full bg-blue-950 text-white'>
             Checkout Now
           </button>
+          <Link className="w-[60%]" to ="/">
+          <button className='mt-[10px] text-base py-3 px-4 min-w-[100%] rounded-full bg-blue-950 text-white'
+           >Continue Shopping</button>
+          </Link>
           
         </div>
       

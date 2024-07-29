@@ -2,9 +2,12 @@ import React, { useContext, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { FaShoppingCart } from "react-icons/fa";
 import { AppContext } from '../contexts/AppContext';
+import { useLocation } from 'react-router-dom';
 
 function Navbar() {
-  const {totalItems,getTotalItems,cartItems} = useContext(AppContext);
+  const {totalItems,getTotalItems,cartItems,category,handleCategory} = useContext(AppContext);
+  const location = useLocation();
+  const pathname = location.pathname;
   useEffect(()=>{
     getTotalItems();
   },[cartItems])
@@ -16,17 +19,24 @@ function Navbar() {
             <span className='text-white p-2 '>
               STYX Cart
             </span>
-
             </NavLink>            
           </div>
+
+          {
+            pathname!="/cart" ? <div className="text-gray-700 p-2 text-lg ">
+            <select className="text-base justify-center" value={category} onChange={handleCategory}>
+              <option className=" justify-center" value="all">All</option>
+              <option className="justify-center" value="men's clothing">Men</option>
+              <option value="jewelery">Jewelery</option>
+              <option value="electronics">Electronics</option>
+              <option value="women's clothing">Women</option>
+            </select>
+          </div> :<></>
+          }
+
+          
     
           <div className='flex py-2 '>
-          <NavLink className="px-4 hover:text-blue-400" to={"/"}>
-          <button >
-            Home
-          </button>
-          </NavLink>
-        
       
           <NavLink className={"flex items-center justify-center px-4"}to={"/cart"}>
           <div className='relative'>
